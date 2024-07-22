@@ -13,10 +13,9 @@ body {
   position: relative !important;
 }
 
-/* header {
-  background: blue;
-  padding-top: 10px;
-} */
+header {
+  z-index: 9;
+}
 
 .Header {
   background: #00306e;
@@ -138,7 +137,6 @@ nav span {
   flex: 58%;
   /* display: flex;
   flex-direction: column; */
-  border: 1px solid red;
   padding-left: 9px;
 }
 .description h1 {
@@ -199,15 +197,14 @@ nav span {
 
 .wrapper .picture {
   flex: 42%;
-  border: 1px solid red;
 }
 .picture {
   flex: 44%;
-  border: 1px solid red;
+  display: flex;
+  justify-content: center;
 }
 .description {
   flex: 56%;
-  border: 1px solid red;
   padding: 9px;
 }
 
@@ -251,6 +248,15 @@ nav span {
   line-height: 34px;
   letter-spacing: 0.5px;
 }
+.description ul li h3.yellow {
+  color: #00e1b8 !important;
+  margin-bottom: 9px;
+}
+.description ul li p {
+  margin-left: 30px;
+  line-height: 1.5;
+}
+
 .yellow {
   color: #f89e15;
 }
@@ -290,6 +296,8 @@ nav span {
 .parent {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  border: 1px solid red;
+  /* align-i; */
 }
 .children {
   width: 80%;
@@ -311,6 +319,75 @@ nav span {
 .children h3 {
   margin-top: 20px;
   font-size: 20px;
+}
+
+.Pricing {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+/* PRICING TABLE */
+.table {
+  display: flex;
+  width: 90%;
+  overflow-x: scroll;
+  /* justify-content: center; */
+  justify-self: center;
+}
+
+table {
+  width: 900px;
+}
+
+table a {
+  font-weight: 500;
+  font-size: 19px;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  padding: 9px 15px;
+  border-radius: 12px;
+  line-height: 1;
+  text-decoration: none;
+  background-color: #1f60b4;
+  color: #fff;
+  cursor: pointer;
+}
+
+table a:hover {
+  background-color: #f89e15;
+  color: white;
+}
+
+table,
+th,
+td {
+  border: 0.2px solid gray;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding-inline: 20px;
+}
+
+th:first-child,
+td:first-child {
+  max-width: 400px;
+}
+th:not(:first-child),
+td:not(:first-child) {
+  padding: 20px;
+  min-width: 170px;
+}
+
+td:not(:first-child) {
+  text-align: center;
+}
+th:not(:first-child) {
+  color: #fff;
 }
 
 @media (max-width: 700px) {
@@ -412,19 +489,27 @@ nav span {
     font-size: larger;
     text-align: center;
   }
-  /* .description ul li {
-    font-size: small;
-  } */
-  /* #topbar {
-    display: none;
-    } */
+  .table {
+    width: 85%;
+  }
+
+  tr {
+    position: relative;
+  }
+  th:first-child,
+  td:first-child {
+    position: sticky;
+    left: 0;
+    background: #fff;
+    outline: 0.05px solid gray;
+  }
   .parent {
     display: grid;
     grid-template-columns: 1fr;
   }
 }
 
-@media (max-width: 4500px) {
+@media (max-width: 500px) {
   .navLinks {
     top: 4.4%;
   }
